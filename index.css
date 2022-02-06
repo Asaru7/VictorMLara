@@ -437,6 +437,10 @@ body:not(.user-is-tabbing) a:focus {
         /* --------------------------------------- */
         /* ----- Proyectos ----- */
         /* --------------------------------------- */
+        .text_proyectos{
+          color: #6A9BF7;
+          font-size: 25px;
+        }
         .work__box {
             display: flex;
             align-items: center;

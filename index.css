@@ -37,7 +37,7 @@
    --black: #000;
    --blue: #0058ff;
    --white: #f0e9f2;
-   --white-1: #e5e5e6da;
+   --white-1: #e5e5e6;
 
 
     --container-max-width: 1180px;
@@ -397,6 +397,7 @@ body:not(.user-is-tabbing) a:focus {
         background: var(--blue);
         }
         
+
         /* --------------------------------------- */
         /* ----- Header ----- */
         /* --------------------------------------- */
@@ -438,18 +439,33 @@ body:not(.user-is-tabbing) a:focus {
         /* ----- Proyectos ----- */
         /* --------------------------------------- */
         .text_proyectos{
-          color: #6A9BF7;
+          color: rgba(red, green, blue, 0.2) ;
           font-size: 25px;
         }
-        .work__box {
-            display: flex;
+        .work__box li{
+            border: 1px solid gray;
+            background: linear-gradient( rgba(0,0,0, 0.4), rgba(0,0,235,0.2));
+            -webkit-backdrop-filter: blur(5px);
+            backdrop-filter: blur(2px);
+            border-radius: 2rem 0 2rem 0;
+            display: inline;
             align-items: center;
+        }
+        .work__box li:hover{
+            background: linear-gradient( rgba(0,0,255, 0.35), rgba(0,0,235,0.2));
         }
         
         @media(max-width: 900px) {
             .work__box {
                 align-items: initial;
                 flex-direction: column-reverse;
+            }
+            .work__box li{
+                display: block;
+                padding: 2px;
+                margin: 10px;
+                text-align: center;
+            
             }
         }
         
@@ -490,13 +506,17 @@ body:not(.user-is-tabbing) a:focus {
         }
         
         .work__image-box {
-            margin-bottom: var(--gutter-normal);
+            width: 100px;
         }
         
         @media(min-width: 901px) {
             .work__image-box {
                 flex: 1;
                 margin: 0 0 0 10rem;
+            }
+            .work__box li{
+                padding: 10px;
+                margin: 10px;
             }
         }
         
@@ -511,6 +531,7 @@ body:not(.user-is-tabbing) a:focus {
         /* ----- Información ----- */
         /* --------------------------------------- */
         .informacion__content {
+
             display: flex;
             flex-direction: row-reverse;
             align-items: center;
@@ -531,23 +552,65 @@ body:not(.user-is-tabbing) a:focus {
             .informacion__text {
                 flex: 0 0 35%;
             }
-            
+            .informacion__photo{
+                width: 80%;
+            }
             .informacion__photo-container {
                 flex: 1;
-                margin: 0 var(--gutter-huge) 0 0;
             }
         }
         
         /* --------------------------------------- */
         /* ----- Contacto ----- */
         /* --------------------------------------- */
-      
+        body{
+            background: linear-gradient(rgba(0,0,0, .3), rgba(0,0,0, .4)), 
+                url('./images/fondo.jpg');
+            height: 10vh;
+            background-position: center;
+            background-attachment: fixed;
+            transform: 0.5s ;    
+          }
         .contacto__info {
             max-width: var(--container-medium-width);
         }
         .whatsapp_contacto-image {
             max-width: 10%;
         }
+        /* --------------------------------------- */
+        /* ----- Skills ----- */
+        /* --------------------------------------- */
+        .skills{
+            display: flex;
+            align-content: center;
+            justify-content: center;
+            text-align: center;
+        }
+        .skills li{
+            display: inline;
+            align-items: center;
+            align-content: center;
+            justify-content: center;
+            justify-items: center;
+        }
+
+        .skills img{
+            border-radius:  10rem;
+            text-decoration: none;
+            width: 10%;
+            transition-duration: 0.2s;
+        }
+
+        .skills img:hover{
+            transform: rotate(360deg);
+            transition: 0.5s;
+        }
+        .skills #git:hover{
+            background: yellow;
+        }
+
+
+
         /* --------------------------------------- */
         /* ----- Footer ----- */
         /* --------------------------------------- */
@@ -558,7 +621,7 @@ body:not(.user-is-tabbing) a:focus {
         }
         
         .footer__social-links {
-        display: flex;
+            display: flex;
             justify-content: center;
             padding: var(--gutter-normal) 0;
             list-style: none;
@@ -569,7 +632,8 @@ body:not(.user-is-tabbing) a:focus {
         }
         
         .footer__social-image {
-            height: 4rem;
+            background: white;
+            height: 6rem;
         }
         
         .footer__github-buttons {
